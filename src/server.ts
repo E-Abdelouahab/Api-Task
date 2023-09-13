@@ -32,6 +32,7 @@ app.get('/tasks', TaskHandler.listAllTasks);                     // List all
 app.get('/users/:userId/tasks', TaskHandler.listUserTasks);      // List by userId
 app.delete('/users/:userId/tasks', TaskHandler.deleteUserTasks); // Delete by userId
 app.get('/tasks/search', TaskHandler.searchTasks);   // Add the search route
+app.get('/tasks/searchFinished', TaskHandler.searchFinished); // TEST
 
 app.post('/tasks', TaskHandler.createTask);                 // Create
 app.get('/tasks/:taskId', TaskHandler.readTask);                 // Read

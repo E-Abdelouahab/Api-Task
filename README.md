@@ -1,6 +1,6 @@
-# API_de_Gestion_des_t�ches
+# API_de_Gestion_des_taches
 
-## Installation de d�pendences
+## Installation de dependences
 
 > npm install
 

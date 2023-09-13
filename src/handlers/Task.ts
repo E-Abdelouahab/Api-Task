@@ -16,7 +16,32 @@ export async function searchTasks(req: Request, res: Response): Promise<void> {
       }
   
       // Check if 'finished' parameter is provided and add it to the query as a boolean
-      if (typeof finished === 'boolean') {
+      if (typeof finished === "boolean") {
+        query.finished = finished; // Search by task finished status
+      }
+      query.finished = finished; 
+      // Use the query to search for tasks
+      const tasks: ITask[] = await Task.find(query);
+  
+      res.status(200).json(tasks);
+    } catch (error) {
+      console.error('Error in searchTasks:', error);
+      res.status(500).json({ error: 'An error occurred while searching for tasks.' });
+    }
+  }
+  export async function searchFinished(req: Request, res: Response): Promise<void> {
+    try {
+      const {  finished } = req.query; // Get the search parameters from query parameters
+  
+      // Create an empty query object
+      const query: any = {};
+  
+      // Check if 'name' parameter is provided and add it to the query
+    
+  
+      // Check if 'finished' parameter is provided and add it to the query as a boolean
+      if (typeof finished == 'boolean') {
+       
         query.finished = finished; // Search by task finished status
       }
   
